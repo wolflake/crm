@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Layout - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+	
+<script type="text/javascript">  
+    $(document).ready(function(){
+        var height1 = $(window).height();  
+        $("#main_layout").attr("style","width:100%;height:"+height1+"px");  
+        $("#main_layout").layout("resize",{  
+            width:"100%",  
+            height:height1+"px"  
+        });  
+        $(".easyui-tree li a").each(function() {
+         	$(this).click(function() {
+         		var id = $(this).attr("id");
+         		var title = this.innerText;
+         		var href = "pages/" + id +".html"; // './include/_content.html'
+         		//var content = "_content.html";
+         		if ($(".easyui-tabs").tabs('exists', title)) {
+         			$(".easyui-tabs").tabs('select', title)
+         		} else {
+	         		$(".easyui-tabs").tabs('add', {
+	         			title:title, 
+	         			href: href,
+	                    //content:content,
+	                    closable:true
+	         		});
+         		}
+         	});
+        });
+        /*
+        $('#currency').combobox({  
+		    //url:'combobox_data.json',  
+		    valueField:'id',  
+		    textField:'html'// text -editable, html - readonly
+		}); */
+        
+    });  
+      
+    $(window).resize(function(){  
+        var height1 = $(window).height();  
+        $("#main_layout").attr("style","width:100%;height:"+height1+"px");  
+        $("#main_layout").layout("resize",{  
+            width:"100%",  
+            height:height1+"px"  
+        });  
+    });  
+   
+</script> 
+</head>
+<body>
+	<div id="main_layout" class="easyui-layout" style="width:100%;overflow:hidden">
+		<div data-options="region:'west',split:true" title="菜单栏" style="width:300px;">
+			<div class="easyui-accordion" data-options="collapsed:false,collapsible:false," style="width:100%;height:auto; ">
+				<div title="基本设置" data-options="selected:true">
+					<ul class="easyui-tree">
+						<li><a id="sysconfig">系统设置</a></li>
+						<li><a id="mailconfig">邮件设置</a></li>
+						<li><a id="mailtpl">邮件模版设置</a></li>
+						<li><a id="proxyconfig">代理设置</a></li>
+						<li><a id="tradeconfig">交易设置</a></li>
+						<li><a id="proxynameconfig">代理名称设置</a></li>
+						<li><a id="payconfig">支付设置</a></li>
+						<li><a id="logoconfig">LOGO修改</a></li>
+					</ul>
+				</div>
+				<div title="客户管理" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="clientmgr">客户管理</li>
+					</ul>
+				</div>
+				<div title="财务管理" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="incomeaudit">出金审核</li>
+						<li id="outgorerecord">入金支付记录</li>
+					</ul>
+				</div>
+				<div title="系统管理" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="adminmgr">管理员管理</li>
+						<li id="rolemgr">角色管理</li>
+					</ul>
+				</div>
+				<div title="MT4设置" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="paramconfig">基本参数设置</li>
+						<li id="initial">初始化</li>
+						<li id="groupmgr">组管理</li>
+						<li id="symbolmgr">符号管理</li>
+						<li id="distview">用户所在组分布查看</li>
+					</ul>
+				</div>
+				<div title="统计" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="tradestats">交易统计</li>
+						<li id="inoutstats">出入金统计</li>
+						<li id="commistats">佣金统计</li>
+					</ul>
+				</div>
+				<div title="相关通知" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="mailnotify">邮件通知</li>
+						<li id="docmgr">文档管理</li>
+					</ul>
+				</div>
+				<div title="跟单子系统" data-options="" style="padding:1px;">
+					<ul class="easyui-tree">
+						<li id="orderfollowconfg">跟单设置</li>
+						<li id="toplist">牛人列表</li>
+						<li id="orderfollowrecord">跟单记录</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="contentArea" data-options="region:'center'">
+			<div class="easyui-tabs" style="width:100%;height:100%;">
+				<div title="基本信息" data-options="closable:false," style="padding:10px;">
+					<div class="myblock">
+						<div id="basicInfo01" class="easyui-panel" title="+MT4服务器情况" style="width:400px;height:auto;padding:10px;">
+					        <table class="tb_bi">
+					        	<tr><td>MT4服务器地址</td><td>120.27.140.199:443</td></tr>
+								<tr><td>MT4客户端登录地址</td><td>LMKJ-Live</td></tr>
+								<tr><td>MT4管理员帐号</td><td>3</td></tr>
+								<tr><td>MT4管理员密码</td><td>******</td></tr>
+								<tr><td>开户杠杆参数</td><td>100</td></tr>
+								<tr><td>MT4真实用户默认开户组</td><td>datafeed</td></tr>
+								<tr><td>MT4真实用户开户帐号范围</td><td>700000-800000</td></tr>
+								<tr><td>MT4DEMO用户默认开户组</td><td>demo</td></tr>
+								<tr><td>MT4DEMO用户初始入金数量</td><td>10000</td></tr>
+								<tr><td>MT4DEMO用户开户帐号范围</td><td>1000000-1100000</td></tr>
+					        </table>
+					    </div>
+					    <div class="spacer_v"></div>
+						<div id="basicInfo04" class="easyui-panel" title="+网站设置" style="width:400px;height:auto;padding:10px;">
+							<table class="tb_bi">
+						        <tr><td>前台域名</td><td>http:rm.2016soft.com</td></tr>
+								<tr><td>网站名称</td><td>测试CRM</td></tr>
+								<tr><td>联系电话</td><td>17001107665</td></tr>
+								<tr><td>传真</td><td>123213122</td></tr>
+								<tr><td>地址</td><td>123-800000</td></tr>
+								<tr><td>邮箱(只显示用)</td><td>sdasd</td></tr>
+								<tr><td>主站点地址</td><td>http://www.baidu.com</td></tr>
+							</table>
+					    </div>
+				    </div>
+					<div class="myblock">
+						<div id="basicInfo02" class="easyui-panel" title="+支付设置" style="width:400px;height:auto;padding:10px;">
+							<table class="tb_bi">
+								<tr><td>币种</td><td>USD</td></tr>
+								<tr><td>出金扣款方式</td><td>客户出金申请后从MT4扣款</td></tr>
+								<tr><td>出金汇率计算方式</td><td>实时汇率</td></tr>
+								<tr><td>出金默认汇率</td><td>6.60</td></tr>
+								<tr><td>出金汇率调整值</td><td>0.00</td></tr>
+								<tr><td>入金汇率计算方式</td><td>实时汇率</td></tr>
+								<tr><td>入金默认汇率</td><td>6.60</td></tr>
+								<tr><td>入金汇率调整值</td><td>0.00</td></tr>
+					        </table>
+					    </div>
+				   		<div class="spacer_v"></div>
+						<div id="basicInfo05" class="easyui-panel" title="+邮件设置" style="width:400px;height:auto;padding:10px;">
+							<table class="tb_bi">		        
+						        <tr><td>邮件服务器地址</td><td>smtp.sina.com</td></tr>
+								<tr><td>邮件服务器端口</td><td>25</td></tr>
+								<tr><td>发件邮箱</td><td>johyisaboy@sina.com</td></tr>
+								<tr><td>发件账户</td><td>johnnyisaboy</td></tr>
+								<tr><td>发件账户密码</td><td>******</td></tr>
+								<tr><td>管理员邮箱</td><td>johyisaboy@sina.com</td></tr>
+							</table>
+					    </div>
+				    </div>
+				    
+				    <div class="myblock">
+					    <div id="basicInfo03" class="easyui-panel" title="+客户情况" style="width:400px;height:auto;padding:10px;">
+					    	<table class="tb_bi">
+								<tr><td>申请审核客户</td><td>0</td></tr>
+								<tr><td>已认证客户</td><td>173</td></tr>
+					        </table>
+					    </div>
+						<div class="spacer_v"></div>
+						<div id="basicInfo06" class="easyui-panel" title="+交易情况" style="width:400px;height:auto;padding:10px;">
+							<table class="tb_bi">
+						        <tr><td>买卖单总量</td><td>222</td></tr>
+								<tr><td>入金单总量</td><td>102</td></tr>
+								<tr><td>出金单总量</td><td>280</td></tr>
+							</table>
+					    </div>
+				    	<div class="spacer_v"></div>
+						<div id="basicInfo06" class="easyui-panel" title="+支付情况" style="width:400px;height:auto;padding:10px;">
+					        <table class="tb_bi">	
+						        <tr><td>入金支付总数</td><td>0</td></tr>
+								<tr><td>有效入金支付总数</td><td>0</td></tr>
+								<tr><td>出金申请总数</td><td>1</td></tr>
+								<tr><td>完成出金总数</td><td>0</td></tr>
+							</table>
+					    </div>
+				    </div>
+					<!--
+					<table class="easyui-datagrid"
+							data-options="url:'data/datagrid_data1.json',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true">
+						<thead>
+							<tr>
+								<th data-options="field:'itemid'" width="80">Item ID</th>
+								<th data-options="field:'productid'" width="100">Product ID</th>
+								<th data-options="field:'listprice',align:'right'" width="80">List Price</th>
+								<th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
+								<th data-options="field:'attr1'" width="150">Attribute</th>
+								<th data-options="field:'status',align:'center'" width="60">Status</th>
+							</tr>
+						</thead>
+					</table> -->
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'south'" style="height:30px;text-align: center;">Alpha Studio</div>
+	</div>
+</body>
+</html>

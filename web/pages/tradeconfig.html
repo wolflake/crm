@@ -1,0 +1,75 @@
+<div class="myformpanel">
+	<form id="tradeconfigForm" action="" method="post" enctype="multipart/form-data">
+	<div class="easyui-panel" title="基本设置" style="width:100%;height:auto;padding:10px;margin-bottom: 20px;">
+		 <div style="margin-bottom:20px">
+            <select id="currency" class="easyui-combobox" name="currency" label="币种:" labelPosition="left" style="width:400px;">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+            </select>
+        </div>
+	</div>
+	<div class="easyui-panel" title="入金参数设置" style="width:100%;height:auto;padding:10px;margin-bottom: 20px;">
+		 <div style="margin-bottom:10px">
+            <select id="currency" class="easyui-combobox" name="incomeRatio" label="入金汇率模式:" labelPosition="left" style="width:400px;">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+            </select>
+        </div>
+        <div style="margin-bottom:10px">
+        <input class="easyui-numberspinner" name="incomeDefRatio" label="入金默认汇率:" style="width:400px;" data-options="
+                onChange: function(value){
+                    $('#vv').text(value);
+                }
+            ">
+        </div>
+        <div style="margin-bottom:10px">
+        <input class="easyui-numberspinner" name="incomeRatio" label="入金汇率调整::" style="width:400px;" data-options="
+                onChange: function(value){
+                    $('#vv').text(value);
+                }
+            ">
+        </div>
+	</div>
+	<div class="easyui-panel" title="出金参数设置" style="width:100%;height:auto;padding:10px;margin-bottom: 20px;">
+		<div style="margin-bottom:10px">
+            <select id="currency" class="easyui-combobox" name="outgoRatio" label="出金汇率模式:" labelPosition="left" style="width:400px;">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+            </select>
+        </div>
+        <div style="margin-bottom:10px">
+        <input class="easyui-numberspinner" name="outgoDefRatio" label="出金默认汇率:" style="width:400px;" data-options="
+                onChange: function(value){
+                    $('#vv').text(value);
+                }
+            ">
+        </div>
+        <div style="margin-bottom:10px">
+        <input class="easyui-numberspinner" name="outgoRatio" label="出金汇率调整::" style="width:400px;" data-options="
+                onChange: function(value){
+                    $('#vv').text(value);
+                }
+            ">
+        </div>
+		<div style="margin-bottom:10px">
+            <select id="outgopaymethod" class="easyui-combobox" name="ratio" label="出金扣款方式:" labelPosition="left" style="width:400px;">
+                <option value="AL">出金申请审核后从MT4扣款</option>
+                <option value="AK">客户出金申请后从MT4扣款</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+            </select>
+        </div>
+	</div>
+	<div><input type="submit" value="Save" /></div>
+	</form>
+</div>

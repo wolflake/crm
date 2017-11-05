@@ -1,0 +1,62 @@
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'west',split:true" style="width:250px">
+			<table class="easyui-datagrid"
+					data-options="url:'data/datagrid_data1.json',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true">
+				<thead>
+					<tr>	
+						<th data-options="field:'productid'" width="100">代码</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div data-options="region:'center'">
+			<div class="easyui-panel" title="佣金设置" style="width:100%;height:auto;padding:10px;">
+				<form id="proxyconfigForm" action="" method="post" enctype="multipart/form-data">
+				<table border="0" >
+					<tr>
+						<td class="tb_label">ICIC</td>
+						<td class="tb_label">直接佣金比例:</td>
+				        <td class="tb_value"><input name="icicDirectCommiRatio" class="f1 easyui-textbox"></input></td>
+						<td class="tb_label">间接佣金比例:</td>
+				        <td class="tb_value"><input name="icicIndirectCommiRatio" class="f1 easyui-textbox"></input></td>
+					</tr>
+					<tr>
+						<td class="tb_label">CIB</td>
+						<td class="tb_label">直接佣金比例:</td>
+				        <td class="tb_value"><input name="cibDirectCommiRatio" class="f1 easyui-textbox"></input></td>
+						<td class="tb_label">间接佣金比例:</td>
+				        <td class="tb_value"><input name="cibIndirectCommiRatio" class="f1 easyui-textbox"></input></td>
+					</tr>
+					<tr>
+						<td class="tb_label">EIB</td>
+						<td class="tb_label">直接佣金比例:</td>
+				        <td class="tb_value"><input name="eibDirectCommiRatio" class="f1 easyui-textbox"></input></td>
+						<td class="tb_label">间接佣金比例:</td>
+				        <td class="tb_value"><input name="eibIndirectCommiRatio" class="f1 easyui-textbox"></input></td>
+					</tr>
+					<tr>
+						<td class="tb_label">IB</td>
+						<td class="tb_label">直接佣金比例:</td>
+				        <td class="tb_value"><input name="ibDirectCommiRatio" class="f1 easyui-textbox"></input></td>
+						<td class="tb_label">间接佣金比例:</td>
+				        <td class="tb_value"><input name="ibIndirectCommiRatio" class="f1 easyui-textbox"></input></td>
+					</tr>
+					<tr>
+						<td class="tb_label">EM</td>
+						<td class="tb_label">直接佣金比例:</td>
+				        <td class="tb_value"><input name="emDirectCommiRatio" class="f1 easyui-textbox"></input></td>
+						<td class="tb_label">间接佣金比例:</td>
+				        <td class="tb_value"><input name="emIndirectCommiRatio" class="f1 easyui-textbox"></input></td>
+					</tr>
+					<tr>
+			            <td></td>
+			            <td></td>
+			            <td></td>
+			            <td></td>
+			            <td><input type="submit" value="Submit"></input></td>
+			        </tr>
+			    </table>
+			    </form>
+			</div>
+		</div>
+	</div>
