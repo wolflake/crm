@@ -1,0 +1,140 @@
+body {
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+	font-size: 15px;
+	padding: 20px;
+	margin: 0;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+table tr td {
+	padding: 5px 0px;
+}
+
+ul li {
+	margin: 5px 0px;
+}
+
+
+/********************************************************/
+
+
+/****                 custom config                    **/
+
+
+/********************************************************/
+
+.demo-info {
+	padding: 0 0 12px 0;
+}
+
+.demo-tip {
+	display: none;
+}
+
+.label-top {
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	vertical-align: middle;
+}
+
+
+/*.panel{
+	display:inline;
+	float:left;
+	margin: 0px;
+	width: 260px;
+}*/
+
+.myblock {
+	display: inline;
+	float: left;
+	margin: 5px;
+}
+
+.label {
+	display: inline;
+	float: left;
+	margin-right: 5px;
+}
+
+.field {
+	display: inline;
+	float: left;
+	margin-left: 5px;
+}
+
+.tb_bi {
+	width: auto;
+}
+
+/** table as form frame, and only have 2 columns(td) */
+.tb_bi tr td:first-child {
+	width: 200px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.tb_bi tr td:last-child {
+	width: 400px;
+	text-align: left;
+	padding-left: 5px;
+}
+/** table as form frame, and only have more thant 2 columns(td) */
+.tb_label {
+	width: 200px;
+	text-align: right;
+}
+.tb_value {
+	width: 400px;
+	text-align: left;
+}
+/** table as form frame end */
+
+.tb_wrapper {
+	padding: 10px;
+}
+
+.tb {
+	width: auto;
+}
+
+
+
+.spacer_v {
+	height: 5px;
+}
+
+.spacer_h {
+	widows: 5px;
+}
+
+.myformpanel {
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
